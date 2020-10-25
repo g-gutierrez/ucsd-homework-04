@@ -3,6 +3,7 @@ var submitBtnEl = document.getElementById("submit");
 var questionEl = document.getElementById("question");
 var answerEl = document.getElementById("answer");
 
+var questionsLength = arrQuestions.length;
 var questionIndex = 0;
 var user_score;
 var user_initials;
@@ -18,16 +19,44 @@ function runQuiz() {
     // hide start-screen show questions-screen
     document.getElementById("start-screen").className = "hide";
     document.getElementById("questions-screen").className = "show";
-    for (const )
-    Array.forEach(testQuestions => showQuestion());
+    for (var i = 0; i < questionsLength; i++) {
+        console.log("showQuestion index : " + i + " is " + arrQuestions[i].question);
+        showQuestion(i);
+        // showQuestion();
+    }
     // call showQuestions
     // call endQuiz
 }
 
-function showQuestion() {
-    questionEl.textContent = item.question;
-    var answersArray = item.answers;
-    Array.forEach(answersArray => showAnswers());
+function showQuestion(i) {
+    answerEl.innerHTML = "";
+    var button = [];
+    var activeQuestion = arrQuestions[i];
+    console.log(activeQuestion.question);
+    questionEl.textContent = activeQuestion.question;
+    var answersLength = activeQuestion.arrAnswers.length;
+    console.log(answersLength);
+    for (var j = 0; j < answersLength; j++) {
+        console.log("showAnswer index : " + j + " is " + activeQuestion.arrAnswers[j]);
+        button[j] = document.createElement('button');
+        var text = document.createTextNode(activeQuestion.arrAnswers[j]);
+        button[j].appendChild(text);
+        if (j == activeQuestion.correctAnswer) {
+            button[j].setAttribute("id","correct");
+        } else {
+            button[j].setAttribute("class","incorrect");
+        }
+        answerEl.appendChild(button[j]);
+    }
+    var correctEl = document.getElementById("correct");
+    var incorrectEl = document.getElementsByClassName("incorrect");
+    correctEl.addEventListener("click", addScore);
+    console.log("incorrectEl.length is " + incorrectEl.length);
+    for (var k = 0; k < incorrectEl.length; k++) {
+        incorrectEl[k].addEventListener("click", subtractTime);
+    }
+
+    // questionEl.textContent = activeQuestion.question;
     // 
     // loop through questions in randomized order
         // validate response
@@ -37,12 +66,14 @@ function showQuestion() {
     // 
 }
 
-function showAnswers() {
-    var button = document.createElement('button');
-    var text = document.createTextNode(item.answers);
-    button.appendChild(text);
-    answerEl.appendChild(button);
+function addScore() {
+    console.log("Answered correctly");
 }
+
+function subtractTime() {
+    console.log("Answered wrong");
+}
+
 
 function endQuiz() {
     // hide questions-screen

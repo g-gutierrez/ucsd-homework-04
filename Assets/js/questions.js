@@ -1,57 +1,57 @@
-var testQuestions = [
+var arrQuestions = [
     {
         question: "question 1",
-        answers: 
+        arrAnswers: 
         [
-            "q1 - a1",
-            "q1 - a2",
-            "q1 - a3",
-            "q1 - a4"
+            "q1a1",
+            "q1a2",
+            "q1a3",
+            "q1a4"
         ],
-        correct: "0"
+        correctAnswer: "0"
     },
     {
         question: "question 2",
-        answers: 
+        arrAnswers: 
         [
-            "q2 - a1",
-            "q2 - a2",
-            "q2 - a3",
-            "q2 - a4"
+            "q2a1",
+            "q2a2",
+            "q2a3",
+            "q2a4"
         ],
-        correct: "1"
+        correctAnswer: "1"
     },
     {
         question: "question 3",
-        answers: 
+        arrAnswers: 
         [
-            "q3 - a1",
-            "q3 - a2",
-            "q3 - a3",
-            "q3 - a4"
+            "q3a1",
+            "q3a2",
+            "q3a3",
+            "q3a4"
         ],
-        correct: "2"
+        correctAnswer: "2"
     },
     {
         question: "question 4",
-        answers: 
+        arrAnswers: 
         [
-            "q4 - a1",
-            "q4 - a2",
-            "q4 - a3",
-            "q4 - a4"
+            "q4a1",
+            "q4a2",
+            "q4a3",
+            "q4a4"
         ],
-        correct: "3"
+        correctAnswer: "3"
     },
     {
         question: "question 5",
-        answers: 
+        arrAnswers: 
         [
-            "q5 - a1",
-            "q5 - a2",
-            "q5 - a3",
-            "q5 - a4"
+            "q5a1",
+            "q5a2",
+            "q5a3",
+            "q5a4"
         ],
-        correct: "2"
+        correctAnswer: "2"
     },
 ]
